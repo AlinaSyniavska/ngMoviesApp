@@ -1,8 +1,14 @@
-<!--<div class="card" [routerLink]="[':id']">-->
-<div class="card">
+<div class="movie-card" [routerLink]="[movie.id]">
   <div class="movie-poster">
     <img [src]="posterUrl" [alt]="movie.title"/>
   </div>
-  <div class="movie-title">{{movie.title}}</div>
-  <div class="genres-list">{{listGenresMovie}}</div>
+  <div class="movie-info">
+    <div class="description">
+      <div class="movie-info_title">{{movie.title}}</div>
+      <div class="movie-info_genres">{{listGenresMovie}}</div>
+    </div>
+    <div class="movie-info_rating">
+      <ngbd-rating-decimal [currentRate]="movie.vote_average"></ngbd-rating-decimal>
+    </div>
+  </div>
 </div>

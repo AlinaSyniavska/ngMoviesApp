@@ -1,4 +1,4 @@
-.container {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,7 +8,7 @@
   margin-bottom: 20px;
 }
 
-.container > a {
+.header-container > a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 25px;
