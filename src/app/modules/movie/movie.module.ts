@@ -9,6 +9,7 @@ import { SingleMovieComponent } from './components/single-movie/single-movie.com
 import {MainInterceptor} from "../../main.interceptor";
 import {GenreService, MovieService} from "./services";
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { StartRatingComponent } from './components/start-rating/start-rating.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     MoviesListComponent,
     MoviesListCardComponent,
     SingleMovieComponent,
-    PaginationComponent
+    PaginationComponent,
+    StartRatingComponent
   ],
   imports: [
     CommonModule,
