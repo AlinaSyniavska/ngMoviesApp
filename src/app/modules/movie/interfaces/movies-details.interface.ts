@@ -14,6 +14,7 @@ export interface IMoviesDetails {
   release_date: string,
   title: string,
   video: boolean,
+  runtime: number,
   vote_average: number,
   vote_count: number
 }

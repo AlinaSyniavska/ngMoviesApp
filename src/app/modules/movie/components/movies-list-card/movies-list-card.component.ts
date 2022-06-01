@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 
 import {IGenre, IMovieShortInfo} from "../../interfaces";
 import {DataService} from "../../../../services";
+import {urlPoster} from "../../../../constants";
 
 @Component({
   selector: 'app-movies-list-card',
@@ -25,7 +26,7 @@ export class MoviesListCardComponent implements OnInit {
   }
 
   getPosterUrl(): void {
-    this.posterUrl = 'https://image.tmdb.org/t/p/w500' + this.movie.poster_path;
+    this.posterUrl = urlPoster + this.movie.poster_path;
   }
 
   getListOfGenres(): string {

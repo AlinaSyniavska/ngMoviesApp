@@ -1,1 +1,17 @@
-<p>single-movie works!</p>
+<div class="single-movie">
+  <div class="movie-poster">
+    <img [src]="getPosterUrl(singleMovie.backdrop_path)" [alt]="singleMovie.title"/>
+  </div>
+  <div class="movie-info">
+    <div class="movie-info_title">{{singleMovie.title}}</div>
+    <div class="movie-info_overview">{{singleMovie.overview}}</div>
+    <div class="movie-info_genres">{{getListOfGenres()}}</div>
+    <div class="movie-info_release_date">Release date: {{singleMovie.release_date}}</div>
+    <div class="movie-info_runtime">Runtime: {{getTimeFromMins(singleMovie.runtime)}}</div>
+
+    <div class="movie-info_rating">
+      <ngbd-rating-decimal [currentRate]="singleMovie.vote_average"></ngbd-rating-decimal>
+    </div>
+
+  </div>
+</div>
