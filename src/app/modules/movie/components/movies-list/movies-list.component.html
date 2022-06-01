@@ -1,0 +1,7 @@
+<app-pagination [totalPages]="totalPages"></app-pagination>
+<div class="container">
+  <app-movies-list-card
+    *ngFor="let movieItem of movies"
+    [movie]="movieItem"
+  ></app-movies-list-card>
+</div>

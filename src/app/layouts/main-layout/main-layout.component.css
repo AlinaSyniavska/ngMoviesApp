@@ -1,0 +1,18 @@
+.wrap{
+  /*width: 1200px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5%;
+}
+.light {
+  background: transparent;
+}
+.dark {
+  background: rgba(216, 191, 216, 0.2);
+}
+
+.main-container{
+  /*width: 1100px;*/
+}

@@ -1,0 +1,21 @@
+.pagination{
+  display: flex;
+  justify-content: end;
+  column-gap: 20px;
+  margin-right: 10px;
+}
+
+button {
+  width: 50px;
+  padding: 5px 0;
+  font-size: 20px;
+  /*margin-right: 5px;*/
+  background: thistle;
+  color: #755c75;
+  border-radius: 10px;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
