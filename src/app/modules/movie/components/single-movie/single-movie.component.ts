@@ -14,12 +14,13 @@ export class SingleMovieComponent implements OnInit {
   movieId: string;
   singleMovie: IMoviesDetails;
 
-  constructor(private activatedRoute: ActivatedRoute, private movieService: MovieService) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => this.movieId = id);
+/*    this.activatedRoute.params.subscribe(({id}) => this.movieId = id);
+    this.movieService.getById(this.movieId).subscribe(value => this.singleMovie = value);*/
 
-    this.movieService.getById(this.movieId).subscribe(value => this.singleMovie = value);
+    this.activatedRoute.data.subscribe(({singleMovieData}) => this.singleMovie = singleMovieData);
   }
 
   getPosterUrl(poster_path: string): string {
@@ -34,7 +35,6 @@ export class SingleMovieComponent implements OnInit {
 
   getListOfGenres(): string {
     let movieGenres: string[] = [];
-
 
     this.singleMovie.genres.map(genre => {
       movieGenres.push(genre.name);

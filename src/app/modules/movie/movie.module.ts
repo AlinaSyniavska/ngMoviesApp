@@ -7,7 +7,7 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { MoviesListCardComponent } from './components/movies-list-card/movies-list-card.component';
 import { SingleMovieComponent } from './components/single-movie/single-movie.component';
 import {MainInterceptor} from "../../main.interceptor";
-import {GenreService, MovieService} from "./services";
+import {GenreService, MovieService, SingleMovieResolver} from "./services";
 import { PaginationComponent } from './components/pagination/pagination.component';
 import {NgbdRatingDecimalModule} from "./components/start-rating/rating-decimal.module";
 
@@ -28,6 +28,7 @@ import {NgbdRatingDecimalModule} from "./components/start-rating/rating-decimal.
   providers: [
     MovieService,
     GenreService,
+    SingleMovieResolver,
     {
       provide: HTTP_INTERCEPTORS,
       multi: true,
