@@ -1,19 +1,26 @@
 .wrap{
-  /*width: 1200px;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /*margin: 0 5%;*/
+
+  background-image: url(src/app/images/annie-spratt-YGBaA4UdoLY-unsplash.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
 }
 .light {
-  background: transparent;
+  background-image: url(src/app/images/annie-spratt-YGBaA4UdoLY-unsplash.jpg);
 }
 .dark {
-  background: rgba(216, 191, 216, 0.2);
+  background-image: url(src/app/images/micheile-dot-com-hJkXAy951Lw-unsplash.jpg);
 }
 
 .main-container{
-  width: 100%;
-  /*width: 1100px;*/
+  width: 90%;
+  border-radius: 20px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.5);
 }

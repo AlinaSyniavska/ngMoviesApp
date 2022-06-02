@@ -6,15 +6,19 @@
 }
 
 button {
-  width: 50px;
-  padding: 5px 0;
-  font-size: 20px;
-  /*margin-right: 5px;*/
-  background: thistle;
-  color: #755c75;
+  width: 60px;
+  height: 30px;
+  background: #537483;
+  color: #344a54;
+  font-size: 16px;
   border-radius: 10px;
   border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 button:hover {
   cursor: pointer;
 }

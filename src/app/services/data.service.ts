@@ -7,8 +7,9 @@ import {IGenre} from "../modules/movie/interfaces";
 })
 export class DataService {
 
-  // storageGenres = new BehaviorSubject<IGenres>({genres: []});
   storageGenres = new BehaviorSubject<IGenre[]>([]);
+
+  pageNumber = new BehaviorSubject<number>(1);
 
   constructor() {
   }

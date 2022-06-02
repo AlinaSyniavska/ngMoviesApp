@@ -4,7 +4,7 @@
   cursor: pointer;
   padding: 5px;
   border-radius: 5px;
-  color: #755c75;
+  color: #344a54;
   overflow: hidden;
 
   display: flex;
@@ -13,7 +13,7 @@
 }
 
 .movie-card:hover{
-  background: thistle;
+  background: #60889a;
   -webkit-box-shadow: 0 0 5px 2px rgba(50,31,49,0.54);
   box-shadow: 0 0 5px 2px rgba(50,31,49,0.5);
 }
@@ -47,7 +47,8 @@
 
 .movie-info_genres{
   font-size: 13px;
-  color: rgba(117, 92, 117, 0.5);
+  color: rgba(52, 74, 84, 0.5);
+  font-weight: bold;
 }
 
 .movie-info_rating {

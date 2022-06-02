@@ -12,19 +12,19 @@ import {Component, Input} from '@angular/core';
       position: relative;
       display: inline-block;
       font-size: 1rem;
-      color: #f3ccde;
+      color: #537483;
       margin: 0 5px 0 0;
     }
 
     .full {
-      color: #755c75;
+      color: #344a54;
     }
 
     .half {
       position: absolute;
       display: inline-block;
       overflow: hidden;
-      color: #755c75;
+      color: #344a54;
     }
   `]
 })
