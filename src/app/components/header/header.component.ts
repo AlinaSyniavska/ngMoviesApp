@@ -6,7 +6,7 @@ import {DataService} from "../../services";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css', 'src/app/root-css/root-style.css']
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 

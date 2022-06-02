@@ -10,6 +10,7 @@ import {MainInterceptor} from "../../main.interceptor";
 import {GenreService, MovieService, SingleMovieResolver} from "./services";
 import { PaginationComponent } from './components/pagination/pagination.component';
 import {NgbdRatingDecimalModule} from "./components/start-rating/rating-decimal.module";
+import {HttpModule} from "../../http.module";
 
 
 @NgModule({
@@ -21,19 +22,14 @@ import {NgbdRatingDecimalModule} from "./components/start-rating/rating-decimal.
   ],
   imports: [
     CommonModule,
+    HttpModule,// HttpClientModule,
     MovieRoutingModule,
-    HttpClientModule,
     NgbdRatingDecimalModule
   ],
   providers: [
     MovieService,
     GenreService,
     SingleMovieResolver,
-    {
-      provide: HTTP_INTERCEPTORS,
-      multi: true,
-      useClass: MainInterceptor
-    },
   ],
 })
 export class MovieModule { }
