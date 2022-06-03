@@ -11,9 +11,11 @@ import {DataService} from "../../services";
 export class HeaderComponent implements OnInit {
 
   currentPage: number;
+  genresList: string;
 
   constructor(private genreService: GenreService, private dataService: DataService) {
     this.currentPage = 1;
+    this.genresList = '';
   }
 
   ngOnInit(): void {
@@ -22,6 +24,7 @@ export class HeaderComponent implements OnInit {
       // console.log(genres);
 
       this.dataService.pageNumber.subscribe(data => this.currentPage = data);
+      this.dataService.storageGenreIds.subscribe(data => this.genresList = data);
     });
   }
 

@@ -14,19 +14,23 @@ export class MoviesListComponent implements OnInit {
 
   movies: IMovieShortInfo[];
   totalPages: number;
+  genresList: string;
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute, private dataService: DataService) {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(({page}) => {
-      this.dataService.pageNumber.next(page);
+    let pageMovies = 1;
 
-        this.movieService.getAll(page || 1).subscribe(value => {
-          this.movies = value.results;
-          this.totalPages = value.total_pages;
-        });
+    this.activatedRoute.queryParams.subscribe(({page, with_genres}) => {
+        this.dataService.pageNumber.next(page);
+
+      this.dataService.storageGenreIds.subscribe(data => this.genresList = data);
+
+      this.movieService.getAll(page, this.genresList).subscribe(value => {
+        this.movies = value.results;
+        this.totalPages = value.total_pages;
+      });
     })
-
   }
 }

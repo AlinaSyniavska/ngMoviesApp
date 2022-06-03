@@ -1,0 +1,13 @@
+<section>
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <div *ngFor="let genre of genresList; let i=index">
+      <label>
+        <input type="checkbox" formArrayName="selectedGenres" [value]="genre.id" (change)="onCheckboxChange($event)" [checked]="status"/>
+        {{ genre.name}}
+      </label>
+    </div>
+    <button type="submit">Search</button>
+  </form>
+
+  <!--  <p>{{ form.value | json }}</p>-->
+</section>

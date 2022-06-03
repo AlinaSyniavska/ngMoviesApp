@@ -11,25 +11,32 @@ import {GenreService, MovieService, SingleMovieResolver} from "./services";
 import { PaginationComponent } from './components/pagination/pagination.component';
 import {NgbdRatingDecimalModule} from "./components/start-rating/rating-decimal.module";
 import {HttpModule} from "../../http.module";
+import { GenresListComponent } from './components/genres-list/genres-list.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
-  declarations: [
-    MoviesListComponent,
-    MoviesListCardComponent,
-    SingleMovieComponent,
-    PaginationComponent,
-  ],
+    declarations: [
+        MoviesListComponent,
+        MoviesListCardComponent,
+        SingleMovieComponent,
+        PaginationComponent,
+        GenresListComponent,
+    ],
   imports: [
     CommonModule,
     HttpModule,// HttpClientModule,
     MovieRoutingModule,
-    NgbdRatingDecimalModule
+    NgbdRatingDecimalModule,
+    ReactiveFormsModule
   ],
-  providers: [
-    MovieService,
-    GenreService,
-    SingleMovieResolver,
-  ],
+    providers: [
+        MovieService,
+        GenreService,
+        SingleMovieResolver,
+    ],
+    exports: [
+        GenresListComponent
+    ]
 })
 export class MovieModule { }

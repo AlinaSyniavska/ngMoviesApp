@@ -11,9 +11,11 @@ export class PaginationComponent implements OnInit, OnChanges {
   @Input()
   totalPages: number;
   page: number;
+  genresList: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private dataService: DataService) {
     this.page = 1;
+    this.genresList = '';
   }
 
   ngOnInit(): void {
@@ -23,35 +25,43 @@ export class PaginationComponent implements OnInit, OnChanges {
     console.log('pages:' + this.totalPages);
   }
 
-  nextPage() {
+  changePage(e: Event) {
+    const nextPage = document.getElementById('next');
+    const prevPage = document.getElementById('prev');
+
     this.activatedRoute.queryParams.subscribe(({page}) => this.page = page);
+    this.dataService.storageGenreIds.subscribe(data => this.genresList = data);
 
-    if (this.page) {
-      this.page++;
+    if (this.totalPages > 500) {
+      this.totalPages = 500;
+    }
+
+    if (e.target === nextPage) {
+      if (this.page) {
+        this.page++;
+        if (this.page > this.totalPages) {
+          this.page = 1;
+        }
+      } else {
+        this.page = 2;
+      }
     } else {
-      this.page = 2;
+      if (this.page) {
+        this.page--;
+        if (this.page <= 0) {
+          this.page = this.totalPages;
+        }
+      } else {
+        this.page = this.totalPages;
+      }
     }
 
-    // if (this.page > this.totalPages) {
-    if (this.page > 500) {
-      this.page = 1;
-    }
-
-    this.router.navigate(['.'], {relativeTo: this.activatedRoute, queryParams: {page: `${this.page}`}})
-  }
-
-  prevPage() {
-    this.activatedRoute.queryParams.subscribe(({page}) => this.page = page);
-    if (this.page) {
-      this.page--;
-    } else {
-      this.page = 500;
-    }
-    if (this.page <= 0) {
-      // this.page = this.totalPages;
-      this.page = 500;
-    }
-
-    this.router.navigate(['.'], {relativeTo: this.activatedRoute, queryParams: {page: `${this.page}`}})
+    this.router.navigate(['.'], {
+      relativeTo: this.activatedRoute,
+      queryParams: {
+        page: `${this.page}`,
+        with_genres: `${this.genresList}`
+      }
+    })
   }
 }

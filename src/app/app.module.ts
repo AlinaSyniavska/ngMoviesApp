@@ -8,6 +8,7 @@ import {MainLayoutComponent} from './layouts/main-layout/main-layout.component';
 import {UserInfoComponent} from './components/user-info/user-info.component';
 import {HttpClientModule} from "@angular/common/http";
 import {NgbdRatingDecimalModule} from "./modules/movie/components/start-rating/rating-decimal.module";
+import {MovieModule} from "./modules";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {NgbdRatingDecimalModule} from "./modules/movie/components/start-rating/r
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbdRatingDecimalModule
+    NgbdRatingDecimalModule,
+    MovieModule
   ],
   bootstrap: [AppComponent]
 })

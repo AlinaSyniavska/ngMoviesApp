@@ -11,6 +11,8 @@ export class DataService {
 
   pageNumber = new BehaviorSubject<number>(1);
 
+  storageGenreIds = new BehaviorSubject<string>('');
+
   constructor() {
   }
 }
