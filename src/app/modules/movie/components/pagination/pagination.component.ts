@@ -19,6 +19,12 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    const arrTop = document.getElementById('arrowTop') as HTMLElement;
+
+    window.addEventListener('scroll', (e: Event) => {
+      arrTop.hidden = (scrollY < document.documentElement.clientHeight / 2);
+      console.log(arrTop.hidden);
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -63,5 +69,9 @@ export class PaginationComponent implements OnInit, OnChanges {
         with_genres: `${this.genresList}`
       }
     })
+  }
+
+  toUp() {
+    window.scrollTo(scrollX, 0);
   }
 }
