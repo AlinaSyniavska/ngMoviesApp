@@ -13,7 +13,7 @@
 }
 
 .movie-card:hover{
-  background: #60889a;
+  border: 2px solid #344a54;
   -webkit-box-shadow: 0 0 5px 2px rgba(50,31,49,0.54);
   box-shadow: 0 0 5px 2px rgba(50,31,49,0.5);
 }

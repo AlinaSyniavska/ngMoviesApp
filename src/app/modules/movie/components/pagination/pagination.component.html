@@ -1,6 +1,6 @@
-<div class="pagination">
-  <button (click)="changePage($event)" id="prev">Prev</button>
-  <button (click)="changePage($event)" id="next">Next</button>
-  <div id="arrowTop" hidden (click)="toUp()"></div>
+<div [class]="['pagination']">
+  <button [class]="['btnPagination', 'btnPaginationPrev', 'lightBg']" (click)="changePage($event)" id="prev">Prev</button>
+  <button [class]="['btnPagination', 'btnPaginationNext', 'lightBg']" (click)="changePage($event)" id="next">Next</button>
+  <div class="arrow" id="arrowTop" hidden (click)="toUp()"></div>
 </div>
 

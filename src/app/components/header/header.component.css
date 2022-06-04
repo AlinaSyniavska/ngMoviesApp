@@ -4,9 +4,15 @@
   align-items: center;
   column-gap: 10px;
   padding: 10px 5%;
-  background: #60889a;
   border-radius: 20px 20px 0 0;
   border-bottom: 2px solid #344a54;
+}
+
+.lightBg{
+  background: #60889a;
+}
+.darkBg{
+  background: #ad737d;
 }
 
 .header-container > a {

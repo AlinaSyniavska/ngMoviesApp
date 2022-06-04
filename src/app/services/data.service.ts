@@ -13,6 +13,8 @@ export class DataService {
 
   storageGenreIds = new BehaviorSubject<string>('');
 
+  userColorTheme = new BehaviorSubject<string>('light');
+
   constructor() {
   }
 }

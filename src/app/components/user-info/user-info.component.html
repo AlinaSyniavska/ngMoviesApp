@@ -1,5 +1,16 @@
 <div class="user-profile">
-  <div class="user-photo">
+
+  <form [formGroup]="userForm" (change)="changeColorTheme()">
+    <label>Light
+      <input type="radio" value="light" formControlName="colorTheme" checked>
+    </label>
+    <label>Dark
+      <input type="radio" value="dark" formControlName="colorTheme">
+    </label>
+  </form>
+
+  <div [class]="['user-photo', 'lightBg']">
     <div class="user-name">{{'A'}}</div>
   </div>
+
 </div>

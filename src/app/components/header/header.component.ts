@@ -1,19 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 
 import {GenreService} from "../../modules/movie/services";
 import {DataService} from "../../services";
+import {ColorThemeService} from "../../services/color-theme.service";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, DoCheck {
 
   currentPage: number;
   genresList: string;
 
-  constructor(private genreService: GenreService, private dataService: DataService) {
+  constructor(private genreService: GenreService, private dataService: DataService, private colorThemeService: ColorThemeService) {
     this.currentPage = 1;
     this.genresList = '';
   }
@@ -28,4 +29,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  ngDoCheck(): void {
+    this.colorThemeService.changeColorTheme('header-container');
+  }
 }

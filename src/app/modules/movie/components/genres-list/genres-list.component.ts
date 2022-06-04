@@ -4,6 +4,7 @@ import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {DataService} from "../../../../services";
 import {IGenre} from "../../interfaces";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ColorThemeService} from "../../../../services/color-theme.service";
 
 @Component({
   selector: 'app-genres-list',
@@ -17,7 +18,8 @@ export class GenresListComponent implements OnInit, DoCheck {
   status: boolean;
 
   constructor(private fb: FormBuilder, private dataService: DataService,
-              private activatedRoute: ActivatedRoute, private router: Router) {
+              private activatedRoute: ActivatedRoute, private router: Router,
+              private colorThemeService: ColorThemeService) {
     this._createForm();
   }
 
@@ -25,6 +27,8 @@ export class GenresListComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     this.dataService.storageGenres.subscribe(data => this.genresList = data);
+
+    this.colorThemeService.changeColorTheme('btnSearch');
   }
 
   _createForm(): void {

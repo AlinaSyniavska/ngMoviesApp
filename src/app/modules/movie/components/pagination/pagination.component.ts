@@ -1,19 +1,21 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../../../../services";
+import {ColorThemeService} from "../../../../services/color-theme.service";
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css']
 })
-export class PaginationComponent implements OnInit, OnChanges {
+export class PaginationComponent implements OnInit, OnChanges, DoCheck {
   @Input()
   totalPages: number;
   page: number;
   genresList: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private dataService: DataService) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,
+              private dataService: DataService, private colorThemeService: ColorThemeService) {
     this.page = 1;
     this.genresList = '';
   }
@@ -21,14 +23,19 @@ export class PaginationComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     const arrTop = document.getElementById('arrowTop') as HTMLElement;
 
-    window.addEventListener('scroll', (e: Event) => {
+    window.addEventListener('scroll', () => {
       arrTop.hidden = (scrollY < document.documentElement.clientHeight / 2);
-      console.log(arrTop.hidden);
     });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('pages:' + this.totalPages);
+    // console.log('pages:' + this.totalPages);
+  }
+
+  ngDoCheck(): void {
+    this.colorThemeService.changeColorTheme('btnPaginationPrev');
+    this.colorThemeService.changeColorTheme('btnPaginationNext');
+    this.colorThemeService.changeColorTheme('arrow');
   }
 
   changePage(e: Event) {

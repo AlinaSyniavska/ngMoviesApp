@@ -14,12 +14,11 @@ form {
   margin-bottom: 10px;
 }
 
-form > button {
+form > .btnSearch {
   width: 70%;
   font-size: 16px;
   border-radius: 10px;
   border: none;
-  background: #344a54;
   color: #60889a;
   margin-top: 20px;
 
@@ -29,4 +28,12 @@ form > button {
 
 label:hover {
   cursor: pointer;
+}
+
+.lightBg{
+  background: #344a54;
+}
+
+.darkBg{
+  background: #794a54;
 }

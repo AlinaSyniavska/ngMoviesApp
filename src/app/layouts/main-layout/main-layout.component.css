@@ -32,5 +32,10 @@
 
 app-genres-list{
   border-radius: 0 0 0 20px ;
+}
+.lightBg{
   background: #60889a;
+}
+.darkBg{
+  background: #ad737d;
 }

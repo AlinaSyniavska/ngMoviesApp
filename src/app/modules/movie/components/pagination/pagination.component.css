@@ -6,24 +6,23 @@
   margin-top: 20px;
 }
 
-button {
+.btnPagination {
   width: 60px;
   height: 30px;
-  background: #537483;
+  /*background: #537483;*/
   color: #344a54;
   font-size: 16px;
   border-radius: 10px;
   border: none;
 }
 
-button:hover {
+.btnPagination:hover {
   cursor: pointer;
 }
 
 #arrowTop {
   height: 40px;
   width: 30px;
-  color: #344a54;
   position: fixed;
   right: 40px;
   bottom: 40px;
@@ -33,5 +32,20 @@ button:hover {
 #arrowTop::before {
   content: '▲';
   font-size: 40px;
+}
+
+.lightBg{
+  background: #537483;
+}
+.arrow.lightBg{
+  color: #344a54;
+  background: none;
+}
+.darkBg{
+  background: #ad737d;
+}
+.arrow.darkBg{
+  background: none;
+  color: #794a54;
 }
 

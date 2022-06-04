@@ -1,4 +1,4 @@
-<div class="header-container">
+<div [class]="['header-container', 'lightBg']">
   <a [routerLink]="['movies']" [queryParams]="{page: currentPage, with_genres: genresList}">Movies</a>
   <app-user-info></app-user-info>
 </div>
